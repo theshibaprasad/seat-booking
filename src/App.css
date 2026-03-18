@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+/* Screen */
+.screen {
+  margin: 20px auto;
+  width: 300px;
+  height: 40px;
+  background: linear-gradient(to right, #94a3b8, #e2e8f0);
+  border-radius: 50px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 60px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Seat */
+.seat {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.available {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.available:hover {
+  transform: scale(1.1);
+}
+
+.booked {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  cursor: not-allowed;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  color: black;
+  padding: 25px;
+  border-radius: 16px;
+  width: 300px;
+  text-align: center;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background: #22c55e;
+  color: white;
+}
+
+.buttons button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+/* Tooltip container */
+.seat {
+  position: relative;
+}
+
+/* Tooltip text */
+.tooltip {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ef4444;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+/* Show on hover */
+.booked:hover .tooltip {
+  opacity: 1;
+}
